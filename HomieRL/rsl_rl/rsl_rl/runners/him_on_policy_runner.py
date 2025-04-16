@@ -33,8 +33,7 @@ import os
 from collections import deque
 import statistics
 
-from torch.utils.tensorboard import SummaryWriter as TensorboardSummaryWriter
-
+from torch.utils.tensorboard import SummaryWriter 
 import torch
 
 import rsl_rl
@@ -107,7 +106,7 @@ class HIMOnPolicyRunner:
                 self.writer = WandbSummaryWriter(log_dir=self.log_dir, flush_secs=10, cfg=self.cfg)
                 self.writer.log_config(self.env.cfg, self.cfg, self.alg_cfg, self.policy_cfg)
             elif self.logger_type == "tensorboard":
-                self.writer = TensorboardSummaryWriter(log_dir=self.log_dir, flush_secs=10)
+                self.writer = SummaryWriter(log_dir=self.log_dir, flush_secs=10)
             else:
                 raise AssertionError("logger type not found")
             

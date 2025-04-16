@@ -89,12 +89,12 @@ def play(args, x_vel=0.0, y_vel=0.0, yaw_vel=0.0, height=0.74):
     policy = ppo_runner.get_inference_policy(device=env.device) # Use this to load from trained pt file
     
     # policy = load_onnx_policy() # Use this to load from exported onnx file
-    
     if EXPORT_POLICY:
-        path = os.path.join(LEGGED_GYM_ROOT_DIR, 'logs', train_cfg.runner.experiment_name, 'exported', 'policies')
-        export_policy_as_jit(ppo_runner.alg.actor_critic, path)
+        path = os.path.join(LEGGED_GYM_ROOT_DIR, 'logs', train_cfg.runner.experiment_name,'exported', 'policies')
+        export_policy_as_jit(ppo_runner.alg.actor_critic, path, train_cfg.runner.checkpoint)
+
         print('Exported policy as jit script to: ', path)
-    print(policy)
+    # print(policy)
     camera_position = np.array(env_cfg.viewer.pos, dtype=np.float64)
     camera_vel = np.array([1., 1., 0.])
     camera_direction = np.array(env_cfg.viewer.lookat) - np.array(env_cfg.viewer.pos)
@@ -116,4 +116,4 @@ if __name__ == '__main__':
     RECORD_FRAMES = False
     MOVE_CAMERA = False
     args = get_args()
-    play(args, x_vel=0., y_vel=0., yaw_vel=0., height=0.24)
+    play(args, x_vel=0., y_vel=0., yaw_vel=0., height=0.74)

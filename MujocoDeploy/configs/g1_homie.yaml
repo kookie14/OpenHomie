@@ -1,5 +1,5 @@
 # Policy and model paths
-policy_path: "{LEGGED_GYM_ROOT_DIR}/logs/exported/policies/policy.pt"
+policy_path: "/home/trinh/Documents/VR/OpenHomie/HomieRL/legged_gym/logs/debug/exported/policies/policy_3000.pt"
 xml_path: "{LEGGED_GYM_ROOT_DIR}/resources/robots/g1_description/g1.xml"
 
 # Simulation parameters
@@ -31,4 +31,4 @@ obs_history_len: 6
 
 # Initial commands
 cmd_init: [0.0, 0.0, 0.0]
-height_cmd: 0.34
+height_cmd: 0.7

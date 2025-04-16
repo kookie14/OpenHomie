@@ -91,3 +91,21 @@ The base environment `legged_robot` implements a rough terrain locomotion task. 
     self.gym.refresh_force_sensor_tensor(self.sim)
     contact = self.sensor_forces[:, :, 2] > 1.
 ```
+
+
+# TRAIN AND PLAY 
+1. Train 
+
+```
+
+```
+2. Play checkpoint
+
+```
+python legged_gym/legged_gym/scripts/play.py  --experiment_name debug --run_name resume  --resume --task g1
+```
+The default `checkpoint` is the latest one. If you want to load a specific checkpoint, just mention which one.
+
+```
+ python legged_gym/legged_gym/scripts/play.py  --experiment_name debug --run_name debug  --checkpoint 1200 --task g1
+```

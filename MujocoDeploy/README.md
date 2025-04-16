@@ -18,18 +18,12 @@ pip install mujoco==3.2.3
 
 ```bash
 cd ~/OpenHomie/MujocoDeploy
-python mujoco_deploy_g1.py 
+python deploy_mjc_cmd.py configs/g1_homie.yaml
 ```
 
 #### Replace Network Model
 
 Once you run play.py from the HomieRL, the exported model is located at `{LEGGED_GYM_ROOT_DIR}/logs/exported/policies/policy.pt`. Update the `policy_path` in the YAML configuration file accordingly.
-
-#### Simulation Results
-
-| G1 - Linear x | G1 - Height low | G1 - Angular Yaw |
-|--------------|----------------|------------------|
-| ![Linear Motion](./gifs/linx.gif) | ![Height Adjustment](./gifs/height.gif) | ![Yaw Rotation](./gifs/rot.gif) |
 
 ## Acknowledgments
 
