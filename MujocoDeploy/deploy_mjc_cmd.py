@@ -1,5 +1,4 @@
 import sys
-import time
 import collections
 import yaml
 import torch
