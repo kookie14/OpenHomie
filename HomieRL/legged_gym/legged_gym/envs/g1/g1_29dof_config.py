@@ -266,7 +266,7 @@ class G1RoughCfg( LeggedRobotCfg ):
         episode_length_s = 20
         
     class terrain(LeggedRobotCfg.terrain):
-        mesh_type = 'plane'
+        mesh_type = 'trimesh'
 
     class noise( LeggedRobotCfg.terrain ):
         add_noise = True
